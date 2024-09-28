@@ -9,8 +9,6 @@ import {
   List,
   ListItemButton,
   ListItemText,
-  ListItemAvatar,
-  Avatar,
   Typography,
   ListItemIcon,
 } from "@mui/material";
@@ -22,7 +20,6 @@ import EmailIcon from "@mui/icons-material/Email";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ContrastIcon from "@mui/icons-material/Contrast";
-import _ from "lodash";
 import { useTheme } from "../../theme/useTheme";
 import { getFromLS } from "../../utils/storage";
 
@@ -75,7 +72,6 @@ const Header = () => {
   const themesFromStore = getFromLS("Themes");
   const data = themesFromStore.data;
   const [open, setOpen] = React.useState(false);
-  const [themes, setThemes] = useState([]);
   const [currTheme, setCurrTheme] = useState("");
   const { setMode } = useTheme();
   const location = useLocation();
@@ -94,8 +90,6 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const temp = getFromLS("Themes");
-    setThemes(_.keys(temp.data));
     setCurrTheme(getFromLS("theme"));
   }, []);
 
