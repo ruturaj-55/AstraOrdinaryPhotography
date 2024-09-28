@@ -1,0 +1,41 @@
+.post-description {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.cropped-image {
+  overflow: hidden; /* Ensures the image doesn't overflow */
+  position: relative;
+}
+
+.cropped-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%; /* Ensures the image covers the entire div */
+  min-height: 100%; /* Ensures the image covers the entire div */
+  border-radius: 2px; /* Makes the image round */
+  object-fit: cover; /* Ensures the image covers the entire area */
+  display: block; /* Prevents any inline spacing issues */
+  max-width: 100%;
+}
+
+.blog-items {
+  border: 2px solid #008080;
+  border-radius: 25px;
+  .nav-primary {
+    color: #008080;
+  }
+}
+
+.blog-items:hover,
+.blog-items:focus {
+  cursor: pointer;
+  border: 2px solid #1ccaca;
+  transform: translateY(-0.25em);
+  box-shadow: 0 0.5em 0.5em -0.4em #1ccaca;
+  & .nav-primary {
+    color: #1ccaca;
+  }
+}

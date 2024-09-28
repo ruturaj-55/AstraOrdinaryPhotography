@@ -1,0 +1,54 @@
+{
+  "data": {
+    "light": {
+      "id": "T_001",
+      "name": "Light",
+      "colors": {
+        "body": "#FFFFFF",
+        "text": "#000000",
+        "button": {
+          "text": "#008080",
+          "background": "#000000"
+        },
+        "buttonhover" :{
+          "text" : "#1ccaca",
+          "background" : "#000000"
+        },
+        "link": {
+          "text": "teal",
+          "opacity": 1
+        }
+      },
+      "font": "Tinos",
+      "description":"Enable light theme"
+      
+    },
+    "dark": {
+      "id": "T_002",
+      "name": "Dark",      
+      "colors": {
+        "primary" : "#000000",
+        "secondary" : "#008080",
+        "body": "#000000",
+        "text": "#FFFFFF",
+        "button": {
+          "text": "#008080",
+          "background": "#000000"
+        },
+        "buttonhover" :{
+          "text" : "#1ccaca",
+          "background" : "#000000"
+        },
+        "link": {
+          "text": "teal",
+          "opacity": 1
+        },
+        "drawer": {
+          "body" : "#131414"
+        }
+      },
+      "font": "Roboto",
+      "description":"Enable dark theme"
+    }
+  }
+}
