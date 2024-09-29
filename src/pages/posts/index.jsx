@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
+import Typewriter from "typewriter-effect";
 
 const PostsPage = () => {
   const [posts, setPosts] = useState([]);
@@ -47,11 +48,28 @@ const PostsPage = () => {
           <title> Posts | Astraordinary </title>
         </Helmet>
         <Row className="mb-5">
-          <Col lg="8">
+          <Col lg="12">
             <h2 className="display-4 mb-4  mt-5"> Posts </h2>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
+
+        <div className="m-4" style={{ fontSize: "20px" }}>
+          <Typewriter
+            options={{
+              autoStart: true,
+              loop: false,
+              delay: 0,
+            }}
+            onInit={(typewriter) => {
+              typewriter
+                .typeString(
+                  "Discover the wonders of the cosmos, framed through the lens. elescopes are like time machines, opening a window to the universe beyond our Earth, allowing us to gaze into the distant past. Each image captured is a glimpse of stars, galaxies, and nebulae as they existed millions or even billions of years ago. Welcome to a journey through time and space, captured through the lens."
+                )
+                .start();
+            }}
+          />
+        </div>
 
         {loading ? (
           <CircularProgress color="success" />
@@ -60,12 +78,12 @@ const PostsPage = () => {
             {posts.length === 0 ? (
               <div>Nothing here</div>
             ) : (
-              <div>
+              <div className="mt-5 mb-5">
                 {postDates &&
                   postDates.map((date, i) => {
                     return (
                       <Container key={i}>
-                        <div className="d-flex justify-content-start m-4">
+                        <div className="d-flex justify-content-start">
                           <Typography
                             variant="h4"
                             gutterBottom

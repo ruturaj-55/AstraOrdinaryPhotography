@@ -1,33 +1,31 @@
 .site-header {
-    top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;       
+  top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.header-div > a{
-    backdrop-filter: blur(2px) saturate(100%);
+.header-div > a {
+  backdrop-filter: blur(2px) saturate(100%);
 }
-
 
 .nav-items {
-    border: 2px solid #008080;
-    border-radius: 25px;
-    p,span {
-        color:azure        
-    }
-    .nav-primary{
-        color:#008080 ;
-    }
+  border: 2px solid #008080;
+  border-radius: 25px;
+  p,
+  span {
+    color: azure;
+  }
+  .nav-primary {
+    color: #008080;
+  }
 }
 
 .nav-items:hover,
 .nav-items:focus {
-    border: 2px solid #1ccaca;
-    transform: translateY(-0.25em);
-    box-shadow: 0 0.5em 0.5em -0.4em #1ccaca;  
-    & .nav-primary {
-        color:#1ccaca ;
-    }
+  border: 2px solid #1ccaca;
+  transform: translateY(-0.25em);
+  box-shadow: 0 0.5em 0.5em -0.4em #1ccaca;
+  & .nav-primary {
+    color: #1ccaca;
+  }
 }
-
-

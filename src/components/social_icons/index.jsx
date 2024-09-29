@@ -13,7 +13,7 @@ export const Socialicons = (params) => {
         </li>
 
         <li>
-          <a href="https://www.youtube.com/channel/UCoaL6zw0sNyIRmKgCEYKQcw">
+          <a href="https://www.youtube.com/@AstraordinaryPhotography">
             <FaYoutube />
           </a>
         </li>

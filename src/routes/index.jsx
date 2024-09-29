@@ -6,6 +6,7 @@ import BlogsPage from "../pages/blogs";
 import BlogPage from "../pages/Content/Blog";
 import PostsPage from "../pages/posts";
 import PostPage from "../pages/Content/Post";
+import ContactPage from "../pages/contact";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
       <Route path="blogs/:id" exact element={<BlogPage />} />
       <Route path="posts" exact element={<PostsPage />} />
       <Route path="posts/:id" exact element={<PostPage />} />
+      <Route path="contact" exact element={<ContactPage />} />
       <Route path="*" element={<Navigate to="/" replace={true} />} />
     </Routes>
   );

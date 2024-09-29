@@ -40,21 +40,21 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 const navData = [
   {
     primary: "Home",
-    secondary: "About Me",
+    secondary: "Welcome",
     description: " — Get to know me",
     icon: <HomeIcon sx={{ color: "#008080" }} />,
     href: "/home",
   },
   {
-    primary: "Posts",
+    primary: "Cosmic Frames",
     secondary: "Photos",
-    description: " — View latest captures!",
+    description: " — Discover latest captures!",
     icon: <CameraIcon sx={{ color: "#008080" }} />,
     href: "/posts",
   },
   {
-    primary: "Blogs",
-    secondary: "Articles",
+    primary: "Astronomer's Log",
+    secondary: "Blogs",
     description: " — Dive into my longer reflections.",
     icon: <CreateIcon sx={{ color: "#008080" }} />,
     href: "/blogs",
@@ -62,7 +62,7 @@ const navData = [
   {
     primary: "Contact",
     secondary: "Let's connect",
-    description: " — Get in touch with me.",
+    description: " — Reach out to me.",
     icon: <EmailIcon sx={{ color: "#008080" }} />,
     href: "/contact",
   },

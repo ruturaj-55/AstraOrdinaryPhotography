@@ -8,6 +8,7 @@ import "./style.scss";
 
 const HomePage = () => {
   const navigate = useNavigate();
+
   return (
     <HelmetProvider>
       <section id="home" className="home">
@@ -23,25 +24,24 @@ const HomePage = () => {
           <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
             <div className="align-self-center ">
               <div className="intro mx-auto">
-                <h2 className="mb-1x">"I’m Ruturaj Patil"</h2>
-                <h1 className="fluidz-48 mb-1x">
+                <h2 className="mb-2">Astraordinary Photography</h2>
+                <h3 className="mb-2">by Ruturaj Patil</h3>
+                <div className="mt-4 mb-4">
                   <Typewriter
                     options={{
-                      strings: [
-                        "Astronomy",
-                        "Web Developer",
-                        "Android Developer",
-                      ],
                       autoStart: true,
-                      loop: true,
-                      deleteSpeed: 10,
+                      loop: false,
+                      delay: 20,
+                    }}
+                    onInit={(typewriter) => {
+                      typewriter
+                        .typeString(
+                          "Welcome to my world of astrophotography, where the beauty of the cosmos comes to life.Here, I capture the mesmerizing dance of stars, the vibrant hues of nebulae, and the intricate details of distant galaxies. Each photograph tells a story of the universe's wonders, inviting you to explore the night sky from the comfort of your home. Join me on this celestial journey and discover the magic that lies beyond our world."
+                        )
+                        .start();
                     }}
                   />
-                </h1>
-                <p className="mb-1x">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  at nisl euismod urna bibendum
-                </p>
+                </div>
                 <div className="intro_btn-action pb-5">
                   <Button variant="outlined" onClick={() => navigate("/posts")}>
                     Posts
@@ -49,7 +49,10 @@ const HomePage = () => {
                   <Button variant="outlined" onClick={() => navigate("/blogs")}>
                     Blogs
                   </Button>
-                  <Button variant="outlined" onClick={null}>
+                  <Button
+                    variant="outlined"
+                    onClick={() => navigate("/contact")}
+                  >
                     Contact Me
                   </Button>
                 </div>

@@ -14,7 +14,7 @@ import _ from "lodash";
 export const useTheme = () => {
   //Sets the theme with react hook
   const themes = getFromLS("Themes");
-  const [theme, setTheme] = useState(themes.data.light);
+  const [theme, setTheme] = useState(themes.data.dark);
   const [themeLoaded, setThemeLoaded] = useState(false);
 
   const setMode = (mode) => {
@@ -30,7 +30,7 @@ export const useTheme = () => {
   useEffect(() => {
     const temp = getFromLS("Themes");
     const localTheme = getFromLS("theme");
-    localTheme ? setMode(localTheme) : setMode(temp.data.light);
+    localTheme ? setMode(localTheme) : setMode(temp.data.dark);
     setThemeLoaded(true);
   }, []);
 
