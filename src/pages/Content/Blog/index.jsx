@@ -84,7 +84,10 @@ const BlogPage = () => {
               {blogData.map((data, ind) => {
                 if (data["type"] === "description") {
                   return (
-                    <div className="d-flex blog-description mt-4 mb-4">
+                    <div
+                      className="d-flex blog-description mt-4 mb-4"
+                      key={ind}
+                    >
                       <Typography variant="body1" gutterBottom>
                         {data["data"]}
                       </Typography>
@@ -95,12 +98,24 @@ const BlogPage = () => {
                     <div
                       className="d-flex justify-content-center"
                       style={{ width: "100%" }}
+                      key={ind}
                     >
                       <img
                         className="d-block w-100"
-                        src={blog["CoverImage"]}
+                        src={data["data"]}
                         alt={blog["Title"]}
                       />
+                    </div>
+                  );
+                } else if (data["type"] === "title") {
+                  return (
+                    <div
+                      className="d-flex blog-description mt-4 mb-4"
+                      key={ind}
+                    >
+                      <Typography variant="h5" gutterBottom>
+                        {data["data"]}
+                      </Typography>
                     </div>
                   );
                 } else {
