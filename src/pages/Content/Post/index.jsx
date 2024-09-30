@@ -76,9 +76,9 @@ const PostPage = () => {
         {loading ? (
           <CircularProgress color="success" />
         ) : (
-          <div style={{ width: "80%" }}>
+          <div className="m-5" style={{ width: "80%" }}>
             <div className="d-flex mt-5 mb-2">
-              <Typography variant="h2">{post["Title"]}</Typography>
+              <Typography variant="h4">{post["Title"]}</Typography>
             </div>
             <div className="d-flex mt-2 mb-5">
               <Typography variant="h7">{datePosted}</Typography>

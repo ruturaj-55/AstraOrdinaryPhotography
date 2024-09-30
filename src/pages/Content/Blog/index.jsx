@@ -60,7 +60,7 @@ const BlogPage = () => {
         ) : (
           <div style={{ width: "75%" }} className="m-5">
             <div className="d-flex mt-5 mb-2">
-              <Typography variant="h2">{blog["Title"]}</Typography>
+              <Typography variant="h4">{blog["Title"]}</Typography>
             </div>
             <div className="d-flex mt-2 mb-5">
               <Typography variant="h7">{datePosted}</Typography>

@@ -29,7 +29,7 @@ const BlogComponenent = (props) => {
       </div>
 
       <div className="d-flex mt-4">
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           <Link href="#">{data["Title"]}</Link>
         </Typography>
       </div>
