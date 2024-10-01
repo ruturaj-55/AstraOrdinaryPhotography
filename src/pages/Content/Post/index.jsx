@@ -5,13 +5,11 @@ import { Container, Carousel } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
-
 import { db } from "../../../firebase";
 import { getDoc, doc } from "firebase/firestore";
 
 const PostPage = () => {
   const params = useParams();
-
   const [post, setPost] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -98,6 +96,7 @@ const PostPage = () => {
                   ))}
               </Carousel>
             </div>
+
             <Container className="mt-5 mb-5">
               <div className="d-flex mt-5 mb-2">
                 <strong>

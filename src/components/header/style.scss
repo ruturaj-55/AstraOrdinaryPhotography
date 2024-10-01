@@ -11,6 +11,7 @@
 .nav-items {
   border: 2px solid var(--tertiary-color);
   border-radius: 25px;
+  background: var(--body-bg-color);
   .nav-primary {
     color: var(--tertiary-color);
   }
@@ -19,7 +20,7 @@
 .nav-items:hover,
 .nav-items:focus {
   border: 2px solid var(--hover-color);
-  transform: translateY(-0.25em);
+  transform: translateX(-1em);
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover-color);
   & .nav-primary {
     color: var(--hover-color);

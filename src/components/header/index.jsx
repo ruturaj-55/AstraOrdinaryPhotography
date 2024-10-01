@@ -36,37 +36,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-start",
 }));
 
-const navData = [
-  {
-    primary: "Home",
-    secondary: "Welcome",
-    description: " — Get to know me",
-    icon: <HomeIcon sx={{ color: "#008080" }} />,
-    href: "/home",
-  },
-  {
-    primary: "Cosmic Frames",
-    secondary: "Photos",
-    description: " — Discover latest captures!",
-    icon: <CameraIcon sx={{ color: "#008080" }} />,
-    href: "/posts",
-  },
-  {
-    primary: "Astronomer's Log",
-    secondary: "Blogs",
-    description: " — Dive into my longer reflections.",
-    icon: <CreateIcon sx={{ color: "#008080" }} />,
-    href: "/blogs",
-  },
-  {
-    primary: "Contact",
-    secondary: "Let's connect",
-    description: " — Reach out to me.",
-    icon: <EmailIcon sx={{ color: "#008080" }} />,
-    href: "/contact",
-  },
-];
-
 const Header = () => {
   const [open, setOpen] = React.useState(false);
   const [currTheme, setCurrTheme] = useState({});
@@ -90,6 +59,29 @@ const Header = () => {
     setCurrTheme(theme);
   }, [theme]);
 
+  const navData = [
+    {
+      primary: "Home",
+      icon: <HomeIcon sx={{ color: theme.colors.secondary }} />,
+      href: "/home",
+    },
+    {
+      primary: "Cosmic Captures",
+      icon: <CameraIcon sx={{ color: theme.colors.secondary }} />,
+      href: "/posts",
+    },
+    {
+      primary: "Stellar Tales",
+      icon: <CreateIcon sx={{ color: theme.colors.secondary }} />,
+      href: "/blogs",
+    },
+    {
+      primary: "Let's Connect",
+      icon: <EmailIcon sx={{ color: theme.colors.secondary }} />,
+      href: "/contact",
+    },
+  ];
+
   return (
     <>
       <header className="sticky-top site-header">
@@ -98,14 +90,17 @@ const Header = () => {
             <img src={Logo} width={200} alt="Logo" />
           </Link>
           <div className="d-flex align-items-center">
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="end"
-              onClick={handleDrawerOpen}
-            >
-              <MenuIcon style={{ fontSize: "25px" }} />
-            </IconButton>
+            {!open && (
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="end"
+                onClick={handleDrawerOpen}
+                sx={{ transform: "translateX(5)" }}
+              >
+                <MenuIcon style={{ fontSize: "25px" }} />
+              </IconButton>
+            )}
           </div>
         </div>
       </header>
@@ -116,9 +111,8 @@ const Header = () => {
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
-            backgroundColor: theme.colors.body,
-            border: "2px solid",
-            borderColor: theme.colors.secondary,
+            backgroundColor: "transparent",
+            border: "0px none",
           },
         }}
         variant="persistent"
@@ -139,7 +133,6 @@ const Header = () => {
             <ContrastIcon />
           </IconButton>
         </DrawerHeader>
-        <Divider />
         <List className="p-4">
           {navData
             .filter((data) => {
@@ -158,24 +151,6 @@ const Header = () => {
                       <Typography variant="body1" className="nav-primary">
                         {data.primary}
                       </Typography>
-                    }
-                    secondary={
-                      <React.Fragment>
-                        <Typography
-                          sx={{
-                            display: "inline",
-                            fontWeight: "bold",
-                            color: theme.colors.text,
-                          }}
-                          component="span"
-                          variant="body2"
-                        >
-                          {data.secondary}
-                        </Typography>
-                        <span style={{ color: theme.colors.text }}>
-                          {data.description}
-                        </span>
-                      </React.Fragment>
                     }
                   />
                 </ListItemButton>

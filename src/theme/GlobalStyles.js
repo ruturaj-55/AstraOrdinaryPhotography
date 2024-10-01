@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     --secondary-color: #fff;
     --tertiary-color: #008080;
     --hover-color: #1ccaca;
+    --body-bg-color: ${({ theme }) => theme.colors.body};
     --text-color: #fff;
     --text-color-2: #fff;
     --overlay-color: rgb(12 12 12 / 63%);
