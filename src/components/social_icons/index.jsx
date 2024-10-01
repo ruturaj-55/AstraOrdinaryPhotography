@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.scss";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const Socialicons = (params) => {
   return (
@@ -15,6 +16,12 @@ export const Socialicons = (params) => {
         <li>
           <a href="https://www.youtube.com/@AstraordinaryPhotography">
             <FaYoutube />
+          </a>
+        </li>
+
+        <li>
+          <a href="https://x.com/astraordinary_p">
+            <FaXTwitter />
           </a>
         </li>
       </ul>
