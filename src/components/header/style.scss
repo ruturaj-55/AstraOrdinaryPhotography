@@ -9,27 +9,19 @@
 }
 
 .nav-items {
-  border: 2px solid #008080;
+  border: 2px solid var(--tertiary-color);
   border-radius: 25px;
-  p,
-  span {
-    color: azure;
-  }
   .nav-primary {
-    color: #008080;
+    color: var(--tertiary-color);
   }
 }
 
 .nav-items:hover,
 .nav-items:focus {
-  border: 2px solid #1ccaca;
+  border: 2px solid var(--hover-color);
   transform: translateY(-0.25em);
-  box-shadow: 0 0.5em 0.5em -0.4em #1ccaca;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover-color);
   & .nav-primary {
-    color: #1ccaca;
+    color: var(--hover-color);
   }
-}
-
-.MuiDrawer-paper {
-  border: "2px solid teal" !important;
 }

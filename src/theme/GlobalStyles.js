@@ -6,6 +6,8 @@ export const GlobalStyles = createGlobalStyle`
     --bg-color: #0c0c0c;
     --primary-color: #0d0d0d;
     --secondary-color: #fff;
+    --tertiary-color: #008080;
+    --hover-color: #1ccaca;
     --text-color: #fff;
     --text-color-2: #fff;
     --overlay-color: rgb(12 12 12 / 63%);

@@ -21,8 +21,7 @@
           "opacity": 1
         }
       },
-      "font": "Merriweather",
-      "description":"Enable light theme"
+      "font": "Merriweather"
       
     },
     "dark": {
@@ -49,8 +48,7 @@
           "body" : "#131414"
         }
       },
-      "font": "Merriweather",
-      "description":"Enable dark theme"
+      "font": "Merriweather"
     }
   }
 }

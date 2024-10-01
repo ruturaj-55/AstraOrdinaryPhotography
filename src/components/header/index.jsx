@@ -116,7 +116,9 @@ const Header = () => {
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
-            backgroundColor: "#171a1a",
+            backgroundColor: theme.colors.body,
+            border: "2px solid",
+            borderColor: theme.colors.secondary,
           },
         }}
         variant="persistent"
@@ -160,14 +162,19 @@ const Header = () => {
                     secondary={
                       <React.Fragment>
                         <Typography
-                          sx={{ display: "inline", fontWeight: "bold" }}
+                          sx={{
+                            display: "inline",
+                            fontWeight: "bold",
+                            color: theme.colors.text,
+                          }}
                           component="span"
                           variant="body2"
-                          color="text.primary"
                         >
                           {data.secondary}
                         </Typography>
-                        {data.description}
+                        <span style={{ color: theme.colors.text }}>
+                          {data.description}
+                        </span>
                       </React.Fragment>
                     }
                   />
