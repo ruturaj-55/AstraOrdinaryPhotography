@@ -21,7 +21,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ContrastIcon from "@mui/icons-material/Contrast";
 import { useTheme } from "../../theme/useTheme";
-import { getFromLS } from "../../utils/storage";
 
 import "./style.scss";
 import Logo from "../../assets/logo/logo1ccaca.png";
@@ -69,11 +68,9 @@ const navData = [
 ];
 
 const Header = () => {
-  const themesFromStore = getFromLS("Themes");
-  const data = themesFromStore.data;
   const [open, setOpen] = React.useState(false);
-  const [currTheme, setCurrTheme] = useState("");
-  const { setMode } = useTheme();
+  const [currTheme, setCurrTheme] = useState({});
+  const { setMode, theme, themes } = useTheme();
   const location = useLocation();
 
   const handleDrawerOpen = () => {
@@ -90,8 +87,8 @@ const Header = () => {
   };
 
   useEffect(() => {
-    setCurrTheme(getFromLS("theme"));
-  }, []);
+    setCurrTheme(theme);
+  }, [theme]);
 
   return (
     <>
@@ -133,8 +130,8 @@ const Header = () => {
           <IconButton
             onClick={
               currTheme.name === "Light"
-                ? () => themeSwitcher(data["dark"])
-                : () => themeSwitcher(data["light"])
+                ? () => themeSwitcher(themes["data"]["dark"])
+                : () => themeSwitcher(themes["data"]["light"])
             }
           >
             <ContrastIcon />

@@ -4,6 +4,8 @@
       "id": "T_001",
       "name": "Light",
       "colors": {
+        "primary" : "#FFFFFF",
+        "secondary" : "#008080",
         "body": "#FFFFFF",
         "text": "#000000",
         "button": {
@@ -15,11 +17,11 @@
           "background" : "#000000"
         },
         "link": {
-          "text": "teal",
+          "text": "#008080",
           "opacity": 1
         }
       },
-      "font": "Tinos",
+      "font": "Merriweather",
       "description":"Enable light theme"
       
     },
@@ -40,14 +42,14 @@
           "background" : "#000000"
         },
         "link": {
-          "text": "teal",
+          "text": "#008080",
           "opacity": 1
         },
         "drawer": {
           "body" : "#131414"
         }
       },
-      "font": "Roboto",
+      "font": "Merriweather",
       "description":"Enable dark theme"
     }
   }

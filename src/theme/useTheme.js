@@ -34,5 +34,5 @@ export const useTheme = () => {
     setThemeLoaded(true);
   }, []);
 
-  return { theme, themeLoaded, setMode, getFonts };
+  return { theme, themeLoaded, setMode, getFonts, themes };
 };

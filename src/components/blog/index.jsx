@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const BlogComponenent = (props) => {
   const data = props.data;
@@ -43,6 +44,15 @@ const BlogComponenent = (props) => {
       <div className="d-flex post-description">
         <Typography variant="body2" gutterBottom>
           {data["BlogDesc"]}
+        </Typography>
+      </div>
+
+      <div className="d-flex post-description">
+        <Typography variant="body1" gutterBottom>
+          <Link href="#">
+            Read more
+            <ChevronRightIcon />
+          </Link>
         </Typography>
       </div>
     </div>
