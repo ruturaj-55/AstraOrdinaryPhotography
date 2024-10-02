@@ -31,6 +31,49 @@ const BlogPage = () => {
     getBlogData();
   }, [params.id]);
 
+  const handleFullScreen = (imageSrc) => {
+    const img = document.createElement("img");
+    img.src = imageSrc;
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "contain";
+
+    const fullscreenDiv = document.createElement("div");
+    fullscreenDiv.style.position = "fixed";
+    fullscreenDiv.style.top = 0;
+    fullscreenDiv.style.left = 0;
+    fullscreenDiv.style.width = "100vw";
+    fullscreenDiv.style.height = "100vh";
+    fullscreenDiv.style.backgroundColor = "black";
+    fullscreenDiv.style.zIndex = 9999;
+    fullscreenDiv.style.display = "flex";
+    fullscreenDiv.style.alignItems = "center";
+    fullscreenDiv.style.justifyContent = "center";
+    fullscreenDiv.appendChild(img);
+
+    // Function to remove the fullscreenDiv when exiting fullscreen
+    const removeFullScreenDiv = () => {
+      if (document.fullscreenElement === null) {
+        // Remove the div when exiting fullscreen
+        document.body.removeChild(fullscreenDiv);
+        // Remove the event listener
+        document.removeEventListener("fullscreenchange", removeFullScreenDiv);
+      }
+    };
+
+    // Add event listener for when the user exits fullscreen (ESC or click outside)
+    document.addEventListener("fullscreenchange", removeFullScreenDiv);
+
+    // Append the div and request fullscreen
+    document.body.appendChild(fullscreenDiv);
+    fullscreenDiv.requestFullscreen();
+
+    // Allow closing fullscreen by clicking the div as well
+    fullscreenDiv.onclick = () => {
+      document.exitFullscreen();
+    };
+  };
+
   const getDate = (timestamp) => {
     const date = new Date(timestamp * 1000);
     const year = date.getFullYear();
@@ -74,12 +117,6 @@ const BlogPage = () => {
               />
             </div>
 
-            <div className="d-flex blog-description mt-5 mb-4">
-              <Typography variant="body1" gutterBottom>
-                {blog["BlogDesc"]}
-              </Typography>
-            </div>
-
             <div>
               {blogData.map((data, ind) => {
                 if (data["type"] === "description") {
@@ -101,9 +138,10 @@ const BlogPage = () => {
                       key={ind}
                     >
                       <img
-                        className="d-block w-100"
+                        className="d-block w-100 image"
                         src={data["data"]}
                         alt={blog["Title"]}
+                        onClick={() => handleFullScreen(data["data"])}
                       />
                     </div>
                   );

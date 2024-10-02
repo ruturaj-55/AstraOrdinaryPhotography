@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
-import Typewriter from "typewriter-effect";
 
 const PostsPage = () => {
   const [posts, setPosts] = useState([]);
@@ -55,20 +54,12 @@ const PostsPage = () => {
         </Row>
 
         <div className="m-4" style={{ fontSize: "20px" }}>
-          <Typewriter
-            options={{
-              autoStart: true,
-              loop: false,
-              delay: 0,
-            }}
-            onInit={(typewriter) => {
-              typewriter
-                .typeString(
-                  "Discover the wonders of the cosmos, framed through the lens. elescopes are like time machines, opening a window to the universe beyond our Earth, allowing us to gaze into the distant past. Each image captured is a glimpse of stars, galaxies, and nebulae as they existed millions or even billions of years ago. Welcome to a journey through time and space, captured through the lens."
-                )
-                .start();
-            }}
-          />
+          Discover the wonders of the cosmos, framed through the lens.
+          Telescopes are like time machines, opening a window to the universe
+          beyond our Earth, allowing us to gaze into the distant past. Each
+          image captured is a glimpse of stars, galaxies, and nebulae as they
+          existed millions or even billions of years ago. Welcome to a journey
+          through time and space, captured through the lens.
         </div>
 
         {loading ? (
