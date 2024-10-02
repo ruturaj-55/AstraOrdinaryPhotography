@@ -55,15 +55,3 @@
   opacity: 1;
   color: var(--secondary-color);
 }
-
-.po_item .content a {
-  background: var(--bg-color);
-  border: solid 1px var(--text-color);
-  padding: 4px 8px;
-  text-align: center;
-  font-size: 1rem;
-}
-
-.po_item .content a:hover {
-  text-decoration: none;
-}

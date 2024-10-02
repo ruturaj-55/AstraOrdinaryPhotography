@@ -8,12 +8,16 @@
   backdrop-filter: blur(2px) saturate(100%);
 }
 
+.drawer-icon-button {
+  background: var(--body-bg-color) !important;
+}
+
 .nav-items {
   border: 2px solid var(--tertiary-color);
   border-radius: 25px;
   background: var(--body-bg-color);
   .nav-primary {
-    color: var(--tertiary-color);
+    color: var(--text-color);
   }
 }
 

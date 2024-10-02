@@ -120,10 +120,14 @@ const Header = () => {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton
+            className="drawer-icon-button"
+            onClick={handleDrawerClose}
+          >
             <ChevronRightIcon />
           </IconButton>
           <IconButton
+            className="drawer-icon-button"
             onClick={
               currTheme.name === "Light"
                 ? () => themeSwitcher(themes["data"]["dark"])
@@ -140,12 +144,10 @@ const Header = () => {
             })
             .map((data, ind) => (
               <div key={ind} className="nav-items mt-4 mb-4">
-                <ListItemButton
-                  alignItems="flex-start"
-                  href={data.href}
-                  className="m-2"
-                >
-                  <ListItemIcon>{data.icon}</ListItemIcon>
+                <ListItemButton alignItems="flex-start" href={data.href}>
+                  <ListItemIcon className="mt-1 me-3" style={{ minWidth: 0 }}>
+                    {data.icon}
+                  </ListItemIcon>
                   <ListItemText
                     primary={
                       <Typography variant="body1" className="nav-primary">
