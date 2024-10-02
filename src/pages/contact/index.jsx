@@ -14,7 +14,7 @@ const ContactPage = () => {
         </Helmet>
         <Row className="mb-5">
           <Col lg="12">
-            <h2 className="display-4 mb-4  mt-5"> Let's Connect </h2>
+            <h2 className="display-4 mb-4  mt-5">Let's Connect</h2>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>

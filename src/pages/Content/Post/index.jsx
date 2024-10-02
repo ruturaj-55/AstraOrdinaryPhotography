@@ -63,6 +63,50 @@ const PostPage = () => {
     dateCaptured = getDate(post.CapturedOn);
     timeCaptured = getTime(post.CapturedOn);
   }
+
+  const handleFullScreen = (imageSrc) => {
+    const img = document.createElement("img");
+    img.src = imageSrc;
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "contain";
+
+    const fullscreenDiv = document.createElement("div");
+    fullscreenDiv.style.position = "fixed";
+    fullscreenDiv.style.top = 0;
+    fullscreenDiv.style.left = 0;
+    fullscreenDiv.style.width = "100vw";
+    fullscreenDiv.style.height = "100vh";
+    fullscreenDiv.style.backgroundColor = "black";
+    fullscreenDiv.style.zIndex = 9999;
+    fullscreenDiv.style.display = "flex";
+    fullscreenDiv.style.alignItems = "center";
+    fullscreenDiv.style.justifyContent = "center";
+    fullscreenDiv.appendChild(img);
+
+    // Function to remove the fullscreenDiv when exiting fullscreen
+    const removeFullScreenDiv = () => {
+      if (document.fullscreenElement === null) {
+        // Remove the div when exiting fullscreen
+        document.body.removeChild(fullscreenDiv);
+        // Remove the event listener
+        document.removeEventListener("fullscreenchange", removeFullScreenDiv);
+      }
+    };
+
+    // Add event listener for when the user exits fullscreen (ESC or click outside)
+    document.addEventListener("fullscreenchange", removeFullScreenDiv);
+
+    // Append the div and request fullscreen
+    document.body.appendChild(fullscreenDiv);
+    fullscreenDiv.requestFullscreen();
+
+    // Allow closing fullscreen by clicking the div as well
+    fullscreenDiv.onclick = () => {
+      document.exitFullscreen();
+    };
+  };
+
   return (
     <HelmetProvider>
       <Container className="About-header mt-5">
@@ -86,11 +130,12 @@ const PostPage = () => {
               <Carousel>
                 {images &&
                   images.map((data, ind) => (
-                    <Carousel.Item key={ind}>
+                    <Carousel.Item key={ind} className="image">
                       <img
                         className="d-block w-100"
                         src={data}
                         alt={post["Title"]}
+                        onClick={() => handleFullScreen(data)}
                       />
                     </Carousel.Item>
                   ))}
