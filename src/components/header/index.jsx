@@ -137,7 +137,7 @@ const Header = () => {
               aria-label="open drawer"
               edge="end"
               onClick={handleDrawerOpen}
-              sx={{ transform: "translateX(5)", marginLeft: 80 }}
+              sx={{ transform: "translateX(5)" }}
             >
               <MenuIcon style={{ fontSize: "25px" }} />
             </IconButton>

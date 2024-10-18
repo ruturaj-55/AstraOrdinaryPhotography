@@ -6,11 +6,12 @@ import "./style.scss";
 const PostComponent = (props) => {
   const navigate = useNavigate();
   const data = props.data;
+
   return (
     <div className="po_item">
       <img src={data.CoverImage} alt="" />
       <div className="content">
-        <p>{data.About}</p>
+        <p>{data.ObjectName}</p>
         <Button
           variant="outlined"
           onClick={() => navigate(`/posts/${props.id}`)}
