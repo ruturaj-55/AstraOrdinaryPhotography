@@ -30,7 +30,7 @@ const ContactCard = () => {
   return (
     <Card
       sx={{
-        maxWidth: "50%",
+        maxWidth: "70%",
         margin: "20px auto",
         padding: "20px",
         textAlign: "center",

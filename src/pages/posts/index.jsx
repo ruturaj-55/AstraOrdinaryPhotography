@@ -78,7 +78,7 @@ const PostsPage = () => {
                           <Typography
                             variant="h4"
                             gutterBottom
-                            className="ms-0 me-auto"
+                            className="ms-0 me-auto post-dates"
                           >
                             {date}
                           </Typography>

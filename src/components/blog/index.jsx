@@ -21,7 +21,7 @@ const BlogComponenent = (props) => {
 
   return (
     <div
-      className="blog-items m-5 p-5"
+      className="blog-items m-5 p-4"
       style={{ width: "75%" }}
       onClick={() => navigate(`/blogs/${props.id}`)}
     >
@@ -30,7 +30,7 @@ const BlogComponenent = (props) => {
       </div>
 
       <div className="d-flex mt-4">
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" className="blog-title" gutterBottom>
           <Link href="#">{data["Title"]}</Link>
         </Typography>
       </div>

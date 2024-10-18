@@ -1,9 +1,12 @@
 .po_items_ho {
-    column-width: 22em;
-    -moz-column-width: 22em;
-    -webkit-column-width: 22em;
-    column-gap: 8rem;
-    -moz-column-gap: 8rem;
-    -webkit-column-gap: 8rem;
+  column-width: 22em;
+  -moz-column-width: 22em;
+  -webkit-column-width: 22em;
+  column-gap: 8rem;
+  -moz-column-gap: 8rem;
+  -webkit-column-gap: 8rem;
 }
 
+.post-dates {
+  font-family: var(--font-family) !important;
+}

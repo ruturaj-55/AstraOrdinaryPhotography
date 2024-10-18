@@ -12,13 +12,18 @@ export const GlobalStyles = createGlobalStyle`
     --text-color: ${({ theme }) => theme.colors.text};
     --text-color-2: #fff;
     --overlay-color: rgb(12 12 12 / 63%);
+    --font-family: ${({ theme }) => theme.font} 
   }
 
   body {
     background: ${({ theme }) => theme.colors.body};
     color: ${({ theme }) => theme.colors.text};
-    font-family: ${({ theme }) => theme.font};
+    font-family: ${({ theme }) => theme.font} !important;
     transition: all 0.50s linear;
+  }
+  
+  p {
+    font-family: ${({ theme }) => theme.font} !important;
   }
 
   a {

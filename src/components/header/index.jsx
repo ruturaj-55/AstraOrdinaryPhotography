@@ -21,7 +21,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ContrastIcon from "@mui/icons-material/Contrast";
 import { useTheme } from "../../theme/useTheme";
-
 import "./style.scss";
 import Logo from "../../assets/logo/logo1ccaca.png";
 
@@ -84,7 +83,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky-top site-header">
+      {/* <header className="sticky-top site-header">
         <div className="d-flex align-items-center justify-content-between header-div">
           <Link to="/" style={{ fontSize: "25px" }}>
             <img src={Logo} width={200} alt="Logo" />
@@ -103,8 +102,42 @@ const Header = () => {
             )}
           </div>
         </div>
-      </header>
+      </header> */}
 
+      <div
+        className="site-header"
+        style={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          zIndex: 1,
+          top: 10,
+        }}
+      >
+        <div className="logo-header">
+          <Link to="/" style={{ fontSize: "25px" }}>
+            <img src={Logo} width={200} alt="Logo" />
+          </Link>
+        </div>
+        <div
+          className="menu-header"
+          style={{ position: "fixed", top: 0, right: 0 }}
+        >
+          {!open && (
+            <IconButton
+              className="drawer-icon-button"
+              color="inherit"
+              aria-label="open drawer"
+              edge="end"
+              onClick={handleDrawerOpen}
+              sx={{ transform: "translateX(5)", marginLeft: 80 }}
+            >
+              <MenuIcon style={{ fontSize: "25px" }} />
+            </IconButton>
+          )}
+        </div>
+      </div>
       <Drawer
         sx={{
           width: drawerWidth,
@@ -115,27 +148,30 @@ const Header = () => {
             border: "0px none",
           },
         }}
+        onClose={(ev, reason) => setOpen(false)}
         variant="persistent"
         anchor="right"
         open={open}
       >
-        <DrawerHeader>
-          <IconButton
-            className="drawer-icon-button"
-            onClick={handleDrawerClose}
-          >
-            <ChevronRightIcon />
-          </IconButton>
-          <IconButton
-            className="drawer-icon-button"
-            onClick={
-              currTheme.name === "Light"
-                ? () => themeSwitcher(themes["data"]["dark"])
-                : () => themeSwitcher(themes["data"]["light"])
-            }
-          >
-            <ContrastIcon />
-          </IconButton>
+        <DrawerHeader sx={{ display: "flex", justifyContent: "end" }}>
+          <div className="me-4 mt-4">
+            <IconButton
+              className="drawer-icon-button"
+              onClick={
+                currTheme.name === "Light"
+                  ? () => themeSwitcher(themes["data"]["dark"])
+                  : () => themeSwitcher(themes["data"]["light"])
+              }
+            >
+              <ContrastIcon />
+            </IconButton>
+            <IconButton
+              className="drawer-icon-button"
+              onClick={handleDrawerClose}
+            >
+              <ChevronRightIcon />
+            </IconButton>
+          </div>
         </DrawerHeader>
         <List className="p-4">
           {navData
@@ -150,7 +186,11 @@ const Header = () => {
                   </ListItemIcon>
                   <ListItemText
                     primary={
-                      <Typography variant="body1" className="nav-primary">
+                      <Typography
+                        sx={{ fontFamily: theme.font }}
+                        variant="body1"
+                        className="nav-primary"
+                      >
                         {data.primary}
                       </Typography>
                     }
