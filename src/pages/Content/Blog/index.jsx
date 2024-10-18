@@ -101,7 +101,7 @@ const BlogPage = () => {
         {loading ? (
           <CircularProgress color="success" />
         ) : (
-          <div style={{ width: "75%" }} className="m-5">
+          <div style={{ width: "85%" }} className="m-5">
             <div className="d-flex mt-5 mb-2">
               <Typography variant="h4" className="blog-title">
                 {blog["Title"]}

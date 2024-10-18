@@ -1,9 +1,3 @@
-// .site-header {
-//   top: 10px;
-//   padding-left: 10px;
-//   padding-right: 10px;
-// }
-
 .header-div > a {
   backdrop-filter: blur(2px) saturate(100%);
 }
@@ -16,6 +10,8 @@
   border: 2px solid var(--tertiary-color);
   border-radius: 25px;
   background: var(--body-bg-color);
+  box-shadow: 0.25em 0.25em 0.25em -0.25em var(--hover-color);
+  transition: box-shadow 0.3s ease;
   .nav-primary {
     color: var(--text-color);
   }
@@ -25,7 +21,7 @@
 .nav-items:focus {
   border: 2px solid var(--hover-color);
   transform: translateX(-1em);
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover-color);
+  box-shadow: 0.5em 0.5em 0.5em -0.4em var(--hover-color);
   & .nav-primary {
     color: var(--hover-color);
   }

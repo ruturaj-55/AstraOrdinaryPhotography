@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import { useLocation } from "react-router-dom";
@@ -39,6 +39,7 @@ const Header = () => {
   const [open, setOpen] = React.useState(false);
   const [currTheme, setCurrTheme] = useState({});
   const { setMode, theme, themes } = useTheme();
+  const drawerRef = useRef(null);
   const location = useLocation();
 
   const handleDrawerOpen = () => {
@@ -56,7 +57,33 @@ const Header = () => {
 
   useEffect(() => {
     setCurrTheme(theme);
-  }, [theme]);
+
+    function handleClickOutside(event) {
+      if (drawerRef.current && !drawerRef.current.contains(event.target)) {
+        handleDrawerClose();
+      }
+    }
+
+    function handleScroll() {
+      handleDrawerClose();
+    }
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        handleDrawerClose();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [theme, drawerRef]);
 
   const navData = [
     {
@@ -83,27 +110,6 @@ const Header = () => {
 
   return (
     <>
-      {/* <header className="sticky-top site-header">
-        <div className="d-flex align-items-center justify-content-between header-div">
-          <Link to="/" style={{ fontSize: "25px" }}>
-            <img src={Logo} width={200} alt="Logo" />
-          </Link>
-          <div className="d-flex align-items-center">
-            {!open && (
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="end"
-                onClick={handleDrawerOpen}
-                sx={{ transform: "translateX(5)" }}
-              >
-                <MenuIcon style={{ fontSize: "25px" }} />
-              </IconButton>
-            )}
-          </div>
-        </div>
-      </header> */}
-
       <div
         className="site-header"
         style={{
@@ -152,6 +158,7 @@ const Header = () => {
         variant="persistent"
         anchor="right"
         open={open}
+        ref={drawerRef}
       >
         <DrawerHeader sx={{ display: "flex", justifyContent: "end" }}>
           <div className="me-4 mt-4">
@@ -180,7 +187,11 @@ const Header = () => {
             })
             .map((data, ind) => (
               <div key={ind} className="nav-items mt-4 mb-4">
-                <ListItemButton alignItems="flex-start" href={data.href}>
+                <ListItemButton
+                  className="drawer-list-button"
+                  alignItems="flex-start"
+                  href={data.href}
+                >
                   <ListItemIcon className="mt-1 me-3" style={{ minWidth: 0 }}>
                     {data.icon}
                   </ListItemIcon>
