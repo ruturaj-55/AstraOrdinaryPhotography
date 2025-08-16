@@ -112,7 +112,7 @@ const PostPage = () => {
       <Container className="About-header mt-5">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> Post | Astraordinary </title>
+          <title> Capture | Astraordinary </title>
         </Helmet>
 
         {loading ? (

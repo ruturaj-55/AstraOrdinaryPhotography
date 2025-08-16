@@ -10,7 +10,7 @@ const ContactPage = () => {
       <Container className="About-header mt-5">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> Contact | Astraordinary </title>
+          <title> Let's Connect | Astraordinary </title>
         </Helmet>
         <Row className="mb-5">
           <Col lg="12">

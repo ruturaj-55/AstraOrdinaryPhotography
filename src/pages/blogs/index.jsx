@@ -31,7 +31,7 @@ const BlogsPage = () => {
       <Container className="About-header mt-5">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> Blogs | Astraordinary </title>
+          <title> Stellar Tales | Astraordinary </title>
         </Helmet>
         <Row className="mb-5">
           <Col lg="12">

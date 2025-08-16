@@ -44,7 +44,7 @@ const PostsPage = () => {
       <Container className="About-header mt-5">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> Posts | Astraordinary </title>
+          <title> Cosmic Captures | Astraordinary </title>
         </Helmet>
         <Row className="mb-5">
           <Col lg="12">

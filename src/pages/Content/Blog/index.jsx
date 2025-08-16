@@ -96,7 +96,7 @@ const BlogPage = () => {
       <Container className="About-header mt-5">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> Blog | Astraordinary </title>
+          <title> Tale | Astraordinary </title>
         </Helmet>
         {loading ? (
           <CircularProgress color="success" />

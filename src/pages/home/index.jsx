@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
-import portfolio from "../../assets/images/profile2.jpg";
+import profile_img from "../../assets/images/profile_img.jpg";
 import "./style.scss";
 import { Typography } from "@mui/material";
 
@@ -19,7 +19,7 @@ const HomePage = () => {
         <div className="intro_sec d-block d-lg-flex align-items-center ">
           <div
             className="h_bg-image order-1 order-lg-2 h-100 "
-            style={{ backgroundImage: `url(${portfolio})` }}
+            style={{ backgroundImage: `url(${profile_img})` }}
           ></div>
           <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
             <div className="align-self-center ">

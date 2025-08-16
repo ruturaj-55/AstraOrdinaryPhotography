@@ -121,7 +121,7 @@ const Header = () => {
           top: 10,
         }}
       >
-        <div className="logo-header">
+        <div className="logo-header ms-4">
           <Link to="/" style={{ fontSize: "25px" }}>
             <img src={Logo} width={200} alt="Logo" />
           </Link>
